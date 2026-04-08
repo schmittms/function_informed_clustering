@@ -1,4 +1,4 @@
-name: /project/vitelli/matthew/torch_venv
+name: ../torch_venv
 channels:
   - plotly
   - pytorch
