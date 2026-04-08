@@ -33,7 +33,9 @@ class TaraDataset(Dataset):
         nan_samples = torch.isnan(targets_w_nans).any(dim=1)
         self.inputs = inputs_w_nans[~nan_samples, :]
         self.targets = targets_w_nans[~nan_samples, :]
-        self.targets /= self.targets.std(dim=0)
+        self.normalization_std = self.targets.std(dim=0)
+        self.targets /= self.normalization_std
+        #self.targets /= self.targets.std(dim=0)
 
         self.batch_size = batch_size
 
