@@ -29,3 +29,16 @@ figX/
 ```
 
 The relevant dataset class is defined in `dataset.py`, and the models are trained with `train.py`. The trained models are saved in `trained_models`, where I organize the models by the set of hyperparameters they were trained with (e.g. learning rate, etc.). I always train an ensemble of `N` models, which are saved individually. In `generate_main_figures.ipynb` I load the trained models and generate the relevant plots.
+
+
+## Environment
+For reproducibility I have exported my environment to `environment.yml`. However, _not all of these packages are necessary_ to run SCiFI.
+The key libraries for training and visualization are the following:
+```
+pytorch=2.2.0
+numpy=1.26.3
+scipy=1.15.1
+scikit-learn=1.3.0
+pandas=2.1.4
+matplotlib=3.8.0
+```
